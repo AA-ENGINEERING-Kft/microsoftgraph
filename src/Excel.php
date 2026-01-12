@@ -86,6 +86,23 @@ class Excel
     }
 
     /**
+     * Set the Excel session
+     * */
+    public function setExcelSession($excelSession): void
+    {
+        $this->excelSession = $excelSession;
+    }
+    
+    /**
+     * Get the Excel session
+     * @return string
+     */
+    public function getExcelSession() : string
+    {
+        return $this->excelSession;
+    }
+
+    /**
      * Read values from an Excel range
      *
      * @param string $cellRange Range in Excel notation (e.g. "A1:B5")
