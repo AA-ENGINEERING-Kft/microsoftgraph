@@ -46,7 +46,8 @@ class Authenticate
         } else {
             $tokenData = Http::asForm()->post('https://login.microsoftonline.com/' . config('services.microsoft.tenant') . '/oauth2/token', $this->getTokenFields(request('code')))->object();
             $this->dispatchCallbackReceived($tokenData);
-            return redirect(config('services.microsoft.redirect_after_callback'));
+            return config('services.microsoft.redirect_after_callback');
+            #return redirect(config('services.microsoft.redirect_after_callback'));
         }
     }
 }
